@@ -79,15 +79,17 @@ function startGame() {
 function endGame(){
     questionScreenEl.setAttribute("class", "hidden");
     endScreenEl.setAttribute("class", "visible");
-    // clearInterval(timeInterval);
     console.log('Game Over');
+    stopTimer();
 };
 
 
 // Create a 'startTimer' function
 function startTimer(){
+
     // Initializing the string 'score' value (75)
     timerDisplayEl.textContent = "Time: 75";
+
     // Start the running countdown on the timer / 'score' 
     var timeInterval = setInterval(function() {
         if (score > 0){
@@ -99,13 +101,18 @@ function startTimer(){
             endGame();
         }
     }, 1000);
+
+};
+
+function stopTimer(){
+    clearInterval(startTimer(timeInterval));
 };
 
 // Create 'answerQuestion' function
 function answerQuestion(event) {
 
     // Get the value associated with the clicked button
-    var currentSelection = event.currentTarget.value;
+    var currentSelection = event.target.textContent;
 
     // Compare against the correct answer for the current question
     if (currentSelection == questions[questionIndex].correctAnswer){
@@ -131,11 +138,9 @@ function renderCurrentQuestion() {
     buttonTwo.textContent = questions[questionIndex].selectionTwo;
     buttonThree.textContent = questions[questionIndex].selectionThree;
     buttonFour.textContent = questions[questionIndex].selectionFour;
-    selections.addEventListener('click', function() {
-        answerQuestion();
-    });
+    selections.addEventListener('click', answerQuestion);
     } else {
-        endGame()
+        endGame();
     }
     
 };
