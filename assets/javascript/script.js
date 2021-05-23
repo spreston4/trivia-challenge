@@ -46,18 +46,50 @@ console.log(questions[0].correctAnswer);
 var questionIndex = 0;
 
 // Store a refrence to the element for the 'timerDisplayEl'
+var timerDisplayEl = document.querySelector('#timer');
+
 // Store a reference to the 'startButtonEl'
+var startButtonEl = document.querySelector('#start-button');
+
+// Store a reference to the screen sections
+var startScreenEl = document.querySelector('#start-screen');
+var questionScreenEl = document.querySelector('#question-screen');
+var endScreenEl = document.querySelector('#end-screen');
 
 // Create a 'startGame' function
+function startGame() {
     // Call 'startTimer' function
+    startTimer();
     // Hide the start screne element and show the first question
+    startScreenEl.setAttribute("class", "hidden");
+    questionScreenEl.setAttribute("class", "visible");
+    // renderCurrentQuestion();
+};
 
 // Create an 'endGame' function
+function endGame(){
+    questionScreenEl.setAttribute("class", "hidden");
+    endScreenEl.setAttribute("class", "visible");
+    console.log('Game Over');
+};
 
 
 // Create a 'startTimer' function
+function startTimer(){
     // Initializing the string 'score' value (75)
-    // Start the running countdown on the timer / 'score'   
+    timerDisplayEl.textContent = "Time: 75";
+    // Start the running countdown on the timer / 'score' 
+    var timeInterval = setInterval(function() {
+        if (score > 0){
+            timerDisplayEl.textContent = 'Time: ' + score;
+            score--;
+        } else {
+            clearInterval(timeInterval);
+            timerDisplayEl.textContent = 'Time: 0';
+            endGame();
+        }
+    }, 1000);
+};
 
 // Create 'answerQuestion' function
     // Get the value associated with the clicked button
@@ -76,7 +108,9 @@ var questionIndex = 0;
 
 
 
-
+startButtonEl.addEventListener('click', function() {
+    startGame();
+});
 
 
 
