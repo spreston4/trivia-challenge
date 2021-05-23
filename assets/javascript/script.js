@@ -1,6 +1,10 @@
 // DECLARE a starting 'score' (time)
 var score = 75;
 
+// Declare body
+var body = document.body;
+var delay = 1000;
+
 // DECLARE an array list of 'questions'
     // Where each value is an object to define a question and its properties
 var questions = [
@@ -78,10 +82,11 @@ function startGame() {
 
 // Create an 'endGame' function
 function endGame(){
+    stopTimer();
     questionScreenEl.setAttribute("class", "hidden");
     endScreenEl.setAttribute("class", "visible");
-    console.log('Game Over');
-    stopTimer();
+    console.log('Game Over. Final score: ' + score);
+    timerDisplayEl.textContent = "Time: " + score;
 };
 
 
@@ -111,12 +116,36 @@ function stopTimer(){
 
 // Create 'correctAnswer' function
 function correctAnswer() {
+    console.log('Correct!');
 
     // Display 'Correct!' to screen
-    var corr
+    var correctDisplay = document.createElement('p');
+    correctDisplay.textContent = 'Correct!'
+    body.appendChild(correctDisplay);
+
+    // Add delay & remove message
+    setTimeout(function() {
+        correctDisplay.remove();
+    }, delay);
 }
 
 // Create 'wrongAnswer' function
+function wrongAnswer() {
+    console.log('Wrong!');
+
+    //Subtract from score
+    score = score - 10;
+
+    // Display 'Wrong!' to screen
+    var wrongDisplay = document.createElement('p');
+    wrongDisplay.textContent = 'Wrong!'
+    body.appendChild(wrongDisplay);
+
+    // Add delay & remove message
+    setTimeout(function() {
+        wrongDisplay.remove();
+    }, delay);
+}
 
 // Create 'answerQuestion' function
 function answerQuestion(event) {
@@ -126,19 +155,19 @@ function answerQuestion(event) {
 
     // Compare against the correct answer for the current question
     if (currentSelection == questions[questionIndex].correctAnswer){
-        console.log('correct');
-        setTimeout(function() {
-            var 
-        }, 2500);
+
+        correctAnswer();
 
     } else {
-        console.log('incorrect');
-        score = score - 10;
+        
+        wrongAnswer();
     };
 
       // Continue to next question - call 'renderCurrent Question()'
     questionIndex++;
-    renderCurrentQuestion();
+
+    // Delay before rendering next question
+    setTimeout(renderCurrentQuestion, delay);
 };
     
 // Create 'renderCurrentQuestion' function
