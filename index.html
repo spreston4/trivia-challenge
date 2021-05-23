@@ -10,16 +10,61 @@
 <body>
 
     <!-- Nav bar with a link on the left and the timer on the right -->
+    <section class = "nav-bar">
+        <a href = "highscore.html">View Highscores</a>
+        <p>
+            Time: <span class = "timer"></span>
+        </p>
+    </section>
 
     <!-- Start game section -->
-
+    <section id = "start-screen" class = "visible">
+        <h1>
+            Coding Challenge Quiz
+        </h1>
+        <p>
+            Placeholder text.
+        </p>
         <!-- Start game button #start-button id -->
+        <button id = "start-button">
+            Start Game
+        </button>
 
-    <!-- Container for the start game section -->
+    </section>
 
     <!-- Question Section -->
+    <section id = "question-screen" class = "hidden">
+        <h2>
+            Question text goes here.
+        </h2>
+        <!-- <section class = "choices"> -->
+            <button id = "button-one">
+                Button 1
+            </button>
+            <button id = "button-two">
+                Button 2
+            </button>
+            <button id = "button-three">
+                Button 3
+            </button>
+            <button id = "button-four">
+                Button 4
+            </button>
+        <!-- </section> -->
+    </section>
+
+    <!-- End Screen section -->
+    <section id = "end-screen" class="hidden">
+        <h1>
+            Placeholder
+        </h1>
+        <form>
+            Palceholder
+        </form>
+    </section>
 
     <!-- Submit highscore section -->
+    <script src='assets/javascript/script.js'></script>
     
 </body>
 </html>

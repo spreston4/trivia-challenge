@@ -1,9 +1,49 @@
 // DECLARE a starting 'score' (time)
+var score = 75;
 
 // DECLARE an array list of 'questions'
     // Where each value is an object to define a question and its properties
+var questions = [
+    questionOne = {
+        text: 'Question 1 placeholder.',
+        selectionOne: 'First Selection',
+        selectionTwo: 'Second Selection',
+        selectionThree: 'Third Selection',
+        selectionFour: 'Fourth Selection',
+        correctAnswer: 'First Selection'
+    }, 
+    questionTwo = {
+        text: 'Question 2 placeholder.',
+        selectionOne: 'First Selection',
+        selectionTwo: 'Second Selection',
+        selectionThree: 'Third Selection',
+        selectionFour: 'Fourth Selection',
+        correctAnswer: 'Second Selection'
+    }, 
+    questionThree = {
+        text: 'Question 3 placeholder.',
+        selectionOne: 'First Selection',
+        selectionTwo: 'Second Selection',
+        selectionThree: 'Third Selection',
+        selectionFour: 'Fourth Selection',
+        correctAnswer: 'Third Selection'
+    }, 
+    questionFour = {
+        text: 'Question 4 placeholder.',
+        selectionOne: 'First Selection',
+        selectionTwo: 'Second Selection',
+        selectionThree: 'Third Selection',
+        selectionFour: 'Fourth Selection',
+        correctAnswer: 'Fourth Selection'
+    }, 
+];
+
+console.log(questions);
+console.log(questions[2].text);
+console.log(questions[0].correctAnswer);
 
 // Declare an 'questionIndex' variable to point to the current question
+var questionIndex = 0;
 
 // Store a refrence to the element for the 'timerDisplayEl'
 // Store a reference to the 'startButtonEl'
@@ -13,7 +53,7 @@
     // Hide the start screne element and show the first question
 
 // Create an 'endGame' function
-    
+
 
 // Create a 'startTimer' function
     // Initializing the string 'score' value (75)
