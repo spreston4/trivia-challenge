@@ -65,6 +65,7 @@ var buttonThree = document.querySelector('#button-three');
 var buttonFour = document.querySelector('#button-four');
 var selections = document.querySelector('#selections');
 
+
 // Create a 'startGame' function
 function startGame() {
     // Call 'startTimer' function
@@ -91,7 +92,7 @@ function startTimer(){
     timerDisplayEl.textContent = "Time: 75";
 
     // Start the running countdown on the timer / 'score' 
-    var timeInterval = setInterval(function() {
+    timeInterval = setInterval(function() {
         if (score > 0){
             timerDisplayEl.textContent = 'Time: ' + score;
             score--;
@@ -105,8 +106,17 @@ function startTimer(){
 };
 
 function stopTimer(){
-    clearInterval(startTimer(timeInterval));
+    clearInterval(timeInterval);
 };
+
+// Create 'correctAnswer' function
+function correctAnswer() {
+
+    // Display 'Correct!' to screen
+    var corr
+}
+
+// Create 'wrongAnswer' function
 
 // Create 'answerQuestion' function
 function answerQuestion(event) {
@@ -117,6 +127,10 @@ function answerQuestion(event) {
     // Compare against the correct answer for the current question
     if (currentSelection == questions[questionIndex].correctAnswer){
         console.log('correct');
+        setTimeout(function() {
+            var 
+        }, 2500);
+
     } else {
         console.log('incorrect');
         score = score - 10;
@@ -125,20 +139,24 @@ function answerQuestion(event) {
       // Continue to next question - call 'renderCurrent Question()'
     questionIndex++;
     renderCurrentQuestion();
-  
 };
     
-
 // Create 'renderCurrentQuestion' function
 function renderCurrentQuestion() {
+
+    // Determine last question
     if (questionIndex < questions.length) {
+
         // Access the current question data from 'questions[questionIndex];'
-    questionText.textContent = questions[questionIndex].text;
-    buttonOne.textContent = questions[questionIndex].selectionOne;
-    buttonTwo.textContent = questions[questionIndex].selectionTwo;
-    buttonThree.textContent = questions[questionIndex].selectionThree;
-    buttonFour.textContent = questions[questionIndex].selectionFour;
-    selections.addEventListener('click', answerQuestion);
+        questionText.textContent = questions[questionIndex].text;
+        buttonOne.textContent = questions[questionIndex].selectionOne;
+        buttonTwo.textContent = questions[questionIndex].selectionTwo;
+        buttonThree.textContent = questions[questionIndex].selectionThree;
+        buttonFour.textContent = questions[questionIndex].selectionFour;
+
+        // Call 'answerQuestion'
+        selections.addEventListener('click', answerQuestion);
+
     } else {
         endGame();
     }
