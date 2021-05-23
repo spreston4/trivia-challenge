@@ -44,6 +44,7 @@ console.log(questions[0].correctAnswer);
 
 // Declare an 'questionIndex' variable to point to the current question
 var questionIndex = 0;
+console.log(questions[questionIndex].text);
 
 // Store a refrence to the element for the 'timerDisplayEl'
 var timerDisplayEl = document.querySelector('#timer');
@@ -56,6 +57,14 @@ var startScreenEl = document.querySelector('#start-screen');
 var questionScreenEl = document.querySelector('#question-screen');
 var endScreenEl = document.querySelector('#end-screen');
 
+// Store a refrence to question/button display elements
+var questionText = document.querySelector('#question-text');
+var buttonOne = document.querySelector('#button-one');
+var buttonTwo = document.querySelector('#button-two');
+var buttonThree = document.querySelector('#button-three');
+var buttonFour = document.querySelector('#button-four');
+var selections = document.querySelector('#selections');
+
 // Create a 'startGame' function
 function startGame() {
     // Call 'startTimer' function
@@ -63,13 +72,14 @@ function startGame() {
     // Hide the start screne element and show the first question
     startScreenEl.setAttribute("class", "hidden");
     questionScreenEl.setAttribute("class", "visible");
-    // renderCurrentQuestion();
+    renderCurrentQuestion();
 };
 
 // Create an 'endGame' function
 function endGame(){
     questionScreenEl.setAttribute("class", "hidden");
     endScreenEl.setAttribute("class", "visible");
+    // clearInterval(timeInterval);
     console.log('Game Over');
 };
 
@@ -92,22 +102,50 @@ function startTimer(){
 };
 
 // Create 'answerQuestion' function
+function answerQuestion(event) {
+
     // Get the value associated with the clicked button
+    var currentSelection = event.currentTarget.value;
+
     // Compare against the correct answer for the current question
-        // If correct...
-        // If incorreect...
-            // Subtract points from the 'score'
-    // Continue to next question - call 'renderCurrent Question()'
+    if (currentSelection == questions[questionIndex].correctAnswer){
+        console.log('correct');
+    } else {
+        console.log('incorrect');
+        score = score - 10;
+    };
+
+      // Continue to next question - call 'renderCurrent Question()'
+    questionIndex++;
+    renderCurrentQuestion();
+  
+};
+    
 
 // Create 'renderCurrentQuestion' function
-    // Access the current question data from 'questions[questionIndex];'
+function renderCurrentQuestion() {
+    if (questionIndex < questions.length) {
+        // Access the current question data from 'questions[questionIndex];'
+    questionText.textContent = questions[questionIndex].text;
+    buttonOne.textContent = questions[questionIndex].selectionOne;
+    buttonTwo.textContent = questions[questionIndex].selectionTwo;
+    buttonThree.textContent = questions[questionIndex].selectionThree;
+    buttonFour.textContent = questions[questionIndex].selectionFour;
+    selections.addEventListener('click', function() {
+        answerQuestion();
+    });
+    } else {
+        endGame()
+    }
+    
+};
 
 
 
 
 
 
-
+// -------------------- RUN THE GAME ---------------------------- //
 startButtonEl.addEventListener('click', function() {
     startGame();
 });
