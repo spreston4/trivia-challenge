@@ -20,7 +20,7 @@ var questions = [
         correctAnswer: 'Electronic Dance Music (EDM)'
     }, 
     questionTwo = {
-        text: 'In a standard deck of cards, the King of which suit does not have a mustache?.',
+        text: 'In a standard deck of cards, the King of which suit does not have a mustache?',
         selectionOne: 'Hearts',
         selectionTwo: 'Diamonds',
         selectionThree: 'Clubs',
@@ -28,7 +28,7 @@ var questions = [
         correctAnswer: 'Hearts'
     }, 
     questionThree = {
-        text: 'A ‘jiffy’ is an actual unit of time. About how long is a ‘jiffy’?.',
+        text: 'A ‘jiffy’ is an actual unit of time. About how long is a ‘jiffy’?',
         selectionOne: 'One minute',
         selectionTwo: 'One millisecond',
         selectionThree: 'One trillionth of a second',

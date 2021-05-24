@@ -138,3 +138,40 @@ footer {
     border-radius: 10px;
     width: 55%;
 }
+
+@media screen and (max-width: 500px) {
+
+    h1 {
+        font-size: 35px;
+    }
+    
+    h2 {
+        font-size: 15px;
+    }
+    
+    p {
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 12px; 
+    }
+
+    a:link, a:visited, a:hover, a:active {
+        font-size: 10px;
+    }
+
+    .container {
+        width: 90%;
+    }
+    
+    
+    .nav-bar {
+        width: 90%;
+    }
+
+    footer {
+        width: 90%;
+    }
+
+}
