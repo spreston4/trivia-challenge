@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: beige;
 }
 
 button {
@@ -26,11 +26,11 @@ button {
     font-size: 20px; 
     border: none;
     padding: 5px 15px;
-    box-shadow: 2px 2px 7px -2px #000000;
+    border-radius: 10px;
 }
 
 button:hover {
-    box-shadow: none;
+    box-shadow: 2px 2px 7px -2px #000000;
 }
 
 h1 {
@@ -81,7 +81,8 @@ a:link, a:visited, a:hover, a:active {
 
     /* border: 2px solid black; */
     box-shadow: 5px 5px 10px -2px #000000;
-    background-color: beige;
+    background-color: white;
+    border-radius: 10px;
 }
 
 
@@ -89,30 +90,15 @@ a:link, a:visited, a:hover, a:active {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px;
-}
-
-/* #start-screen {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+    padding:  5px 25px;
+    background-color: white;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    box-shadow: 5px 5px 10px -2px #000000;
+    border-radius: 10px;
     width: 55%;
-    margin: 0 auto;
-    padding: 25px;
-
-    border: 2px solid black;
-} */
-
-/* #question-screen {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    border: 3px black solid;
-    margin: 0 auto;
-    padding: 25px;
-} */
+}
 
 #selections {
     display: flex;
@@ -120,16 +106,6 @@ a:link, a:visited, a:hover, a:active {
     align-items: center;
     justify-content: center;
 }
-
-/* #end-screen {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    border: 3px black solid;
-    margin: 0 auto;
-    padding: 25px;
-} */
 
 .form {
     display: flex;
@@ -143,4 +119,5 @@ a:link, a:visited, a:hover, a:active {
 #buttons {
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 15px;
 }

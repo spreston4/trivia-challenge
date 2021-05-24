@@ -18,15 +18,15 @@
         <h1>
             Highscores
         </h1>
-        <section id = "score-list" class = "vislible container">
-            <ol>
-                <script src = "assets/javascript/highscore.js"></script>
+        <section>
+            <ol id = "score-list">
+                
             </ol>
         </section>
     </section>
 
     <section id = "buttons" class = "visible container">
-        <button id = "go-back" formaction="index.html">
+        <button id = "go-back" onclick = "location.href = 'index.html'">
             Go Back
         </button>
         <button id = "clear-scores">
@@ -34,6 +34,7 @@
         </button>
     </section>
   
+    <script src = "assets/javascript/highscore.js"></script>
     
 </body>
 </html>

@@ -5,6 +5,9 @@ var score = 75;
 var body = document.body;
 var delay = 1000;
 
+var scoresArray = [];
+var storedScores = JSON.parse(localStorage.getItem("quizScores"));
+
 // DECLARE an array list of 'questions'
     // Where each value is an object to define a question and its properties
 var questions = [
@@ -219,14 +222,26 @@ function renderCurrentQuestion() {
 // ------------------------------ Submit Scores------------------ //
 
 // Function 'submitScore'
-function submitScore(){
+function submitScore(event){
 
-    // Store score in local storage
-    localStorage.setItem("quizFinalScore", score);
+    // Declare variables
+    var scoresArray = [];
+    var storedScores = JSON.parse(localStorage.getItem("quizScores"));
+    var userScore = {
+        userInitials: initialsEl.value.trim(),
+        userScore: score
+    };
 
-    // Store initials in local storage
-    var setInitials = initialsEl.value;
-    localStorage.setItem("quizSetInitials", setInitials);
+    // If local storage is empty, populate with current userScore
+    if (storedScores == null) {
+        scoresArray.push(userScore);
+        localStorage.setItem("quizScores", JSON.stringify(scoresArray));
+    // If local storage is not empty, add current userScore to end
+    } else {
+        scoresArray = storedScores;
+        scoresArray.push(userScore);
+        localStorage.setItem("quizScores", JSON.stringify(scoresArray));
+    }
 
 }
 
@@ -234,124 +249,3 @@ function submitScore(){
 startButtonEl.addEventListener('click', function() {
     startGame();
 });
-
-
-
-
-
-
-
-
-
-// --------------------------------------------- OLD CODE ------------------------------------------------------------ //
-
-// // Define variables
-// var highScores = [];                                                          // Track highscores
-// var body = document.body;
-
-// // Append 'main' element to display start screen
-//     // Include header
-// var h1Start = document.createElement('h1');
-// h1Start.textContent = 'Coding Quiz Challenge';
-// body.appendChild(h1Start);
-//     // Include start instructions as a paragraph
-// var pStart = document.createElement('p');
-// pStart.textContent = 'Instructions placeholder here.';
-// body.appendChild(pStart);
-//     // Include 'start quiz' button
-// var startButton = document.createElement('button')
-// startButton.textContent = 'Start Quiz';
-// body.appendChild(startButton);
-//         // When 'start quiz' button is pressed, clear the current display for main and begin the quiz function
-// startButton.addEventListener('click', function(){
-//     h1Start.remove();
-//     pStart.remove();
-//     startButton.remove();
-//     takeQuiz();
-// });
-
-// // ------------------------------------------------------------------------------------------------------------- //
-// // ---------------------------------- Quiz Function ------------------------------------------------------------ //
-// // ------------------------------------------------------------------------------------------------------------- //
-// function takeQuiz() {
-
-//     console.log('Quiz has started');   // Test
-
-// // Begin a countdown timer as soon as quiz begins - display countdown text to the .time class
-// // If timer reaches 0, display end screen
-
-// // Declare local variables - score keeper, etc
-//     var currentScore = 0;
-
-// // Declare functions to call
-//     function q1Wrong() {
-//         console.log('Wrong!');
-//         console.log('Score : ' + currentScore);
-//         b1Q1.removeEventListener('click', q1Wrong);
-//         b2Q1.removeEventListener('click', q1Correct);
-//         b3Q1.removeEventListener('click', q1Wrong);
-//         b4Q1.removeEventListener('click', q1Wrong);
-//     };
-
-//     function q1Correct() {
-//         currentScore++;
-//         console.log('Correct!');
-//         console.log('Score : ' + currentScore);
-//         b1Q1.removeEventListener('click', q1Wrong);
-//         b2Q1.removeEventListener('click', q1Correct);
-//         b3Q1.removeEventListener('click', q1Wrong);
-//         b4Q1.removeEventListener('click', q1Wrong);
-//     };
-
-
-// // First question - append to .main class
-//     // Display question as header
-//     var h2Q1 = document.createElement('h2');
-//     h2Q1.textContent = 'Question 1 Placeholder'
-//     body.appendChild(h2Q1);
-//     // Display 4 buttons, each with a different answer on text
-//     var b1Q1 = document.createElement('button');
-//     var b2Q1 = document.createElement('button');
-//     var b3Q1 = document.createElement('button');
-//     var b4Q1 = document.createElement('button');
-
-//     b1Q1.textContent = 'Answer 1 placeholder';
-//     b2Q1.textContent = 'Answer 2 placeholder';
-//     b3Q1.textContent = 'Answer 3 placeholder';
-//     b4Q1.textContent = 'Answer 4 placeholder';
-
-//     body.appendChild(b1Q1);
-//     body.appendChild(b2Q1);
-//     body.appendChild(b3Q1);
-//     body.appendChild(b4Q1);
-
-//     // Listen for button presses
-//         b1Q1.addEventListener('click', q1Wrong);
-//             // q1Wrong();
-//             // answerQ1 = false;
-//             // clickedQ1 = true;
-//         b2Q1.addEventListener('click', q1Correct);
-//         b3Q1.addEventListener('click', q1Wrong);
-//         b4Q1.addEventListener('click', q1Wrong);
-
-
-// // Second question
-//     // Repeat first question just with different text and selections
-
-// // Third question
-//     // Repeat
-
-// // Fourth question
-//     // Repeat
-
-// // End Screen
-//     // Display 'All Done!' as title
-//     // Display score
-//     // Display text box to enter initials
-//     // Display button to 'submit' - on submit, clear current screen and diplay highscore screen
-
-// // Display highscore
-//     // List of high scores in order from highest to lowest
-//     // Display return button - when pressed, returns to welcome message
-//     // Display clear score button - when pressed, clear high score data
-// };
