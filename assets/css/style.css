@@ -150,7 +150,7 @@ footer {
     }
     
     p {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     button {
@@ -158,7 +158,7 @@ footer {
     }
 
     a:link, a:visited, a:hover, a:active {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .container {
