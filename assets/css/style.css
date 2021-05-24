@@ -17,13 +17,20 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: white;
 }
 
 button {
     background-color: var(--primary);
     margin: 5px;
     font-size: 20px; 
+    border: none;
+    padding: 5px 15px;
+    box-shadow: 2px 2px 7px -2px #000000;
+}
+
+button:hover {
+    box-shadow: none;
 }
 
 h1 {
@@ -42,9 +49,17 @@ p {
 }
 
 form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 5px;
 }
 
+a:link, a:visited, a:hover, a:active {
+    text-decoration: underline;
+    color: black;
+}
 
 
 .visible {
@@ -55,6 +70,20 @@ form {
     display: none;
 }
 
+.container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 55%;
+    margin: auto;
+    padding: 25px;
+
+    /* border: 2px solid black; */
+    box-shadow: 5px 5px 10px -2px #000000;
+    background-color: beige;
+}
+
 
 .nav-bar {
     display: flex;
@@ -63,7 +92,7 @@ form {
     padding: 25px;
 }
 
-#start-screen {
+/* #start-screen {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -73,9 +102,9 @@ form {
     padding: 25px;
 
     border: 2px solid black;
-}
+} */
 
-#question-screen {
+/* #question-screen {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -83,7 +112,7 @@ form {
     border: 3px black solid;
     margin: 0 auto;
     padding: 25px;
-}
+} */
 
 #selections {
     display: flex;
@@ -92,7 +121,7 @@ form {
     justify-content: center;
 }
 
-#end-screen {
+/* #end-screen {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -100,9 +129,18 @@ form {
     border: 3px black solid;
     margin: 0 auto;
     padding: 25px;
-}
+} */
 
 .form {
     display: flex;
 
+}
+
+#response-feedback {
+    margin-top: 15px;
+}
+
+#buttons {
+    flex-direction: row;
+    justify-content: space-around;
 }

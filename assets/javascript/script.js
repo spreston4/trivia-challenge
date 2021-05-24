@@ -71,6 +71,8 @@ var selections = document.querySelector('#selections');
 var finalScore = document.querySelector('#final-score');
 var submitButtonEl = document.querySelector('#submit');
 var initialsEl = document.querySelector('#initials');
+var feedBackEl = document.querySelector('#response-feedback');
+var feedBackTextEl = document.querySelector('#response-feeback-text');
 
 
 // Create a 'startGame' function
@@ -80,8 +82,8 @@ function startGame() {
     startTimer();
 
     // Hide the start screne element and show the first question
-    startScreenEl.setAttribute("class", "hidden");
-    questionScreenEl.setAttribute("class", "visible");
+    startScreenEl.setAttribute("class", "hidden container");
+    questionScreenEl.setAttribute("class", "visible container");
     renderCurrentQuestion();
 };
 
@@ -92,8 +94,8 @@ function endGame(){
     stopTimer();
 
     // Display correct screen
-    questionScreenEl.setAttribute("class", "hidden");
-    endScreenEl.setAttribute("class", "visible");
+    questionScreenEl.setAttribute("class", "hidden container");
+    endScreenEl.setAttribute("class", "visible container");
 
     // Display final score
     console.log('Game Over. Final score: ' + score);
@@ -142,13 +144,12 @@ function correctAnswer() {
     console.log('Correct!');
 
     // Display 'Correct!' to screen
-    var correctDisplay = document.createElement('p');
-    correctDisplay.textContent = 'Correct!'
-    body.appendChild(correctDisplay);
+    feedBackEl.setAttribute("class", "visible container");
+    feedBackTextEl.textContent = "Correct!";
 
     // Add delay & remove message
     setTimeout(function() {
-        correctDisplay.remove();
+        feedBackEl.setAttribute("class", "hidden container");
     }, delay);
 }
 
@@ -161,13 +162,12 @@ function wrongAnswer() {
     score = score - 10;
 
     // Display 'Wrong!' to screen
-    var wrongDisplay = document.createElement('p');
-    wrongDisplay.textContent = 'Wrong!'
-    body.appendChild(wrongDisplay);
+    feedBackEl.setAttribute("class", "visible container");
+    feedBackTextEl.textContent = "Wrong!";
 
     // Add delay & remove message
     setTimeout(function() {
-        wrongDisplay.remove();
+        feedBackEl.setAttribute("class", "hidden container");
     }, delay);
 }
 
@@ -225,14 +225,10 @@ function submitScore(){
     localStorage.setItem("quizFinalScore", score);
 
     // Store initials in local storage
-    var setInitials = initialsEl.textContent;
+    var setInitials = initialsEl.value;
     localStorage.setItem("quizSetInitials", setInitials);
 
-    // Send to highscores.html
-
-
 }
-
 
 // -------------------- RUN THE GAME ---------------------------- //
 startButtonEl.addEventListener('click', function() {

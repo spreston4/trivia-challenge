@@ -18,7 +18,7 @@
     </section>
 
     <!-- Start game section -->
-    <section id = "start-screen" class = "visible">
+    <section id = "start-screen" class = "visible container">
         <h1>
             Coding Challenge Quiz
         </h1>
@@ -33,7 +33,7 @@
     </section>
 
     <!-- Question Section -->
-    <section id = "question-screen" class = "hidden">
+    <section id = "question-screen" class = "hidden container">
         <h2 id = "question-text">
         </h2>
         <section id = "selections">
@@ -51,13 +51,19 @@
             </button>
         </section>
     </section>
+
     <!-- Add section for 'correct or wrong' -->
+    <section id = "response-feedback" class = "hidden container">
+        <h2 id = "response-feeback-text">
+            Answer Feeback
+        </h2>
+    </section>
 
     <!-- End Screen section -->
-    <section id = "end-screen" class="hidden">
+    <section id = "end-screen" class="hidden container">
         <h1>
             All Done!
-        </h1>
+        </h1> 
         <p id = "final-score">
             Your final score is: 
         </p>
@@ -70,7 +76,10 @@
             </div>
             <br>
             <div>
-                <input type = "submit" id = "submit" value="Submit!" formaction="highscore.html">
+                <!-- <input type = "submit" id = "submit" value="Submit!" formaction="highscore.html"> -->
+                <button id = "submit" formaction="highscore.html">
+                    Submit!
+                </button>
             </div>
         </form>
     </section>
