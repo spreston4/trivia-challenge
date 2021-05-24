@@ -172,6 +172,7 @@ footer {
 
     footer {
         width: 90%;
+        flex-direction: column;
     }
 
 }
