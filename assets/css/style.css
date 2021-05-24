@@ -1,3 +1,52 @@
+/* Import Open Sans Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Define global variables */
+:root {
+    --bg-color: #f6f4d2;
+    --primary: #d4e09b;
+    --alternate: #a44a3f;
+
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+button {
+    background-color: var(--primary);
+    margin: 5px;
+    font-size: 20px; 
+}
+
+h1 {
+    font-size: 45px;
+    padding: 5px;
+}
+
+h2 {
+    font-size: 25px;
+    padding: 5px;
+}
+
+p {
+    font-size: 17px;
+    padding: 5px;
+}
+
+form {
+    padding: 5px;
+}
+
+
+
 .visible {
     display:flex
 }
@@ -5,6 +54,7 @@
 .hidden {
     display: none;
 }
+
 
 .nav-bar {
     display: flex;
@@ -18,12 +68,21 @@
     align-items: center;
     justify-content: center;
 
+    width: 55%;
+    margin: 0 auto;
+    padding: 25px;
+
+    border: 2px solid black;
 }
 
 #question-screen {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50%;
+    border: 3px black solid;
+    margin: 0 auto;
+    padding: 25px;
 }
 
 #selections {
@@ -37,4 +96,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50%;
+    border: 3px black solid;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+.form {
+    display: flex;
+
 }

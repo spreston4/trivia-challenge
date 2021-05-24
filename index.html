@@ -51,19 +51,33 @@
             </button>
         </section>
     </section>
+    <!-- Add section for 'correct or wrong' -->
 
     <!-- End Screen section -->
     <section id = "end-screen" class="hidden">
         <h1>
-            End Screen Placeholder
+            All Done!
         </h1>
-        <form>
-            Placeholder text
+        <p id = "final-score">
+            Your final score is: 
+        </p>
+        <form class = "form">
+            <div>
+                <label for = "initials">
+                    Enter your initials:
+                </label>
+                <input type = "text" name = "initials" id = "initials" required>
+            </div>
+            <br>
+            <div>
+                <input type = "submit" id = "submit" value="Submit!" formaction="highscore.html">
+            </div>
         </form>
     </section>
 
     <!-- Submit highscore section -->
     <script src='assets/javascript/script.js'></script>
+    <!-- <script src='assets/javascript/highscore.js'></script> -->
     
 </body>
 </html>

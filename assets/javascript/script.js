@@ -68,12 +68,17 @@ var buttonTwo = document.querySelector('#button-two');
 var buttonThree = document.querySelector('#button-three');
 var buttonFour = document.querySelector('#button-four');
 var selections = document.querySelector('#selections');
+var finalScore = document.querySelector('#final-score');
+var submitButtonEl = document.querySelector('#submit');
+var initialsEl = document.querySelector('#initials');
 
 
 // Create a 'startGame' function
 function startGame() {
+
     // Call 'startTimer' function
     startTimer();
+
     // Hide the start screne element and show the first question
     startScreenEl.setAttribute("class", "hidden");
     questionScreenEl.setAttribute("class", "visible");
@@ -82,11 +87,21 @@ function startGame() {
 
 // Create an 'endGame' function
 function endGame(){
+
+    // Stop the timer
     stopTimer();
+
+    // Display correct screen
     questionScreenEl.setAttribute("class", "hidden");
     endScreenEl.setAttribute("class", "visible");
+
+    // Display final score
     console.log('Game Over. Final score: ' + score);
     timerDisplayEl.textContent = "Time: " + score;
+    finalScore.textContent = "Your final score is: " + score + ".";
+
+    // Listen for submit
+    submitButtonEl.addEventListener('click', submitScore);
 };
 
 
@@ -98,10 +113,14 @@ function startTimer(){
 
     // Start the running countdown on the timer / 'score' 
     timeInterval = setInterval(function() {
+
         if (score > 0){
+
             timerDisplayEl.textContent = 'Time: ' + score;
             score--;
+
         } else {
+
             clearInterval(timeInterval);
             timerDisplayEl.textContent = 'Time: 0';
             endGame();
@@ -110,12 +129,16 @@ function startTimer(){
 
 };
 
+// Create a 'stopTimer' function
 function stopTimer(){
+
     clearInterval(timeInterval);
+
 };
 
 // Create 'correctAnswer' function
 function correctAnswer() {
+
     console.log('Correct!');
 
     // Display 'Correct!' to screen
@@ -131,6 +154,7 @@ function correctAnswer() {
 
 // Create 'wrongAnswer' function
 function wrongAnswer() {
+
     console.log('Wrong!');
 
     //Subtract from score
@@ -187,14 +211,27 @@ function renderCurrentQuestion() {
         selections.addEventListener('click', answerQuestion);
 
     } else {
+
         endGame();
     }
-    
 };
 
+// ------------------------------ Submit Scores------------------ //
+
+// Function 'submitScore'
+function submitScore(){
+
+    // Store score in local storage
+    localStorage.setItem("quizFinalScore", score);
+
+    // Store initials in local storage
+    var setInitials = initialsEl.textContent;
+    localStorage.setItem("quizSetInitials", setInitials);
+
+    // Send to highscores.html
 
 
-
+}
 
 
 // -------------------- RUN THE GAME ---------------------------- //
