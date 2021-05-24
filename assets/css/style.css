@@ -56,9 +56,13 @@ form {
     padding: 5px;
 }
 
-a:link, a:visited, a:hover, a:active {
+a:link, a:visited, a:active {
     text-decoration: underline;
     color: black;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 
@@ -120,4 +124,17 @@ a:link, a:visited, a:hover, a:active {
     flex-direction: row;
     justify-content: space-around;
     margin-top: 15px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:  5px 25px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 15px;
+    box-shadow: 5px 5px 10px -2px #000000;
+    border-radius: 10px;
+    width: 55%;
 }

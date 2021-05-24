@@ -12,36 +12,52 @@ var storedScores = JSON.parse(localStorage.getItem("quizScores"));
     // Where each value is an object to define a question and its properties
 var questions = [
     questionOne = {
-        text: 'Question 1 placeholder.',
-        selectionOne: 'First Selection',
-        selectionTwo: 'Second Selection',
-        selectionThree: 'Third Selection',
-        selectionFour: 'Fourth Selection',
-        correctAnswer: 'First Selection'
+        text: 'According to a 2009 study, what type of music helps to ward off mosquitos?',
+        selectionOne: 'Country',
+        selectionTwo: 'Electronic Dance Music (EDM)',
+        selectionThree: 'Rock',
+        selectionFour: 'Reggae',
+        correctAnswer: 'Electronic Dance Music (EDM)'
     }, 
     questionTwo = {
-        text: 'Question 2 placeholder.',
-        selectionOne: 'First Selection',
-        selectionTwo: 'Second Selection',
-        selectionThree: 'Third Selection',
-        selectionFour: 'Fourth Selection',
-        correctAnswer: 'Second Selection'
+        text: 'In a standard deck of cards, the King of which suit does not have a mustache?.',
+        selectionOne: 'Hearts',
+        selectionTwo: 'Diamonds',
+        selectionThree: 'Clubs',
+        selectionFour: 'Spades',
+        correctAnswer: 'Hearts'
     }, 
     questionThree = {
-        text: 'Question 3 placeholder.',
-        selectionOne: 'First Selection',
-        selectionTwo: 'Second Selection',
-        selectionThree: 'Third Selection',
-        selectionFour: 'Fourth Selection',
-        correctAnswer: 'Third Selection'
+        text: 'A ‘jiffy’ is an actual unit of time. About how long is a ‘jiffy’?.',
+        selectionOne: 'One minute',
+        selectionTwo: 'One millisecond',
+        selectionThree: 'One trillionth of a second',
+        selectionFour: 'Ten minutes',
+        correctAnswer: 'One trillionth of a second'
     }, 
     questionFour = {
-        text: 'Question 4 placeholder.',
-        selectionOne: 'First Selection',
-        selectionTwo: 'Second Selection',
-        selectionThree: 'Third Selection',
-        selectionFour: 'Fourth Selection',
-        correctAnswer: 'Fourth Selection'
+        text: 'Why should you not eat apple seeds?',
+        selectionOne: 'They are bad for your teeth',
+        selectionTwo: 'They contain cyanide',
+        selectionThree: 'They are gross',
+        selectionFour: 'A tree will sprout in your stomach',
+        correctAnswer: 'They contain cyanide'
+    }, 
+    questionFive = {
+        text: 'Which Disney character has the highest kill count?',
+        selectionOne: 'Scar (Lion King)',
+        selectionTwo: 'Gaston (Beauty and the Beast)',
+        selectionThree: 'Cruella de Vil (101 Dalmatians)',
+        selectionFour: 'Mulan (Mulan)',
+        correctAnswer: 'Mulan (Mulan)'
+    }, 
+    questionSix = {
+        text: 'What is the closest living relative of the Tyrannosaurus rex?',
+        selectionOne: 'Komodo Dragon',
+        selectionTwo: 'Alligator',
+        selectionThree: 'Chicken',
+        selectionFour: 'Lizard',
+        correctAnswer: 'Chicken'
     }, 
 ];
 
