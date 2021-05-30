@@ -61,13 +61,13 @@ var questions = [
     }, 
 ];
 
-console.log(questions);
-console.log(questions[2].text);
-console.log(questions[0].correctAnswer);
+console.log(questions);                       // Testing
+console.log(questions[2].text);               // Testing
+console.log(questions[0].correctAnswer);      // Testing
 
 // Declare an 'questionIndex' variable to point to the current question
 var questionIndex = 0;
-console.log(questions[questionIndex].text);
+console.log(questions[questionIndex].text);   // Testing
 
 // Store a refrence to the element for the 'timerDisplayEl'
 var timerDisplayEl = document.querySelector('#timer');
@@ -117,7 +117,7 @@ function endGame(){
     endScreenEl.setAttribute("class", "visible container");
 
     // Display final score
-    console.log('Game Over. Final score: ' + score);
+    console.log('Game Over. Final score: ' + score);      // Testing
     timerDisplayEl.textContent = "Time: " + score;
     finalScore.textContent = "Your final score is: " + score + ".";
 
@@ -160,7 +160,7 @@ function stopTimer(){
 // Create 'correctAnswer' function
 function correctAnswer() {
 
-    console.log('Correct!');
+    console.log('Correct!');                 // Testing
 
     // Display 'Correct!' to screen
     feedBackEl.setAttribute("class", "visible container");
@@ -168,14 +168,16 @@ function correctAnswer() {
 
     // Add delay & remove message
     setTimeout(function() {
+
         feedBackEl.setAttribute("class", "hidden container");
+
     }, delay);
 }
 
 // Create 'wrongAnswer' function
 function wrongAnswer() {
 
-    console.log('Wrong!');
+    console.log('Wrong!');                    // Testing
 
     //Subtract from score
     score = score - 10;
@@ -186,9 +188,28 @@ function wrongAnswer() {
 
     // Add delay & remove message
     setTimeout(function() {
+
         feedBackEl.setAttribute("class", "hidden container");
+
     }, delay);
 }
+
+// Validate that a button is pressed with 'validateButton'
+function validateButton(event) {
+
+	var click = event.target;
+
+	if (click == buttonOne || click == buttonTwo || click == buttonThree || click == buttonFour) {
+
+		answerQuestion(event);
+	
+	} else {
+	
+	return;
+
+	};
+
+};
 
 // Create 'answerQuestion' function
 function answerQuestion(event) {
@@ -227,7 +248,7 @@ function renderCurrentQuestion() {
         buttonFour.textContent = questions[questionIndex].selectionFour;
 
         // Call 'answerQuestion'
-        selections.addEventListener('click', answerQuestion);
+        selections.addEventListener('click', validateButton);
 
     } else {
 

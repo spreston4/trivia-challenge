@@ -84,7 +84,7 @@ a:hover {
     padding: 25px;
 
     /* border: 2px solid black; */
-    box-shadow: 5px 5px 10px -2px #000000;
+    box-shadow: 3px 3px 7px -2px #000000;
     background-color: white;
     border-radius: 10px;
 }
@@ -99,7 +99,7 @@ a:hover {
     margin: 0 auto;
     margin-bottom: 15px;
     margin-top: 10px;
-    box-shadow: 5px 5px 10px -2px #000000;
+    box-shadow: 3px 3px 7px -2px #000000;
     border-radius: 10px;
     width: 55%;
 }
@@ -134,12 +134,19 @@ footer {
     background-color: white;
     margin: 0 auto;
     margin-top: 15px;
-    box-shadow: 5px 5px 10px -2px #000000;
+    box-shadow: 3px 3px 7px -2px #000000;
     border-radius: 10px;
     width: 55%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
+    footer {
+
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 650px) {
 
     h1 {
         font-size: 35px;
