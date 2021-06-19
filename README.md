@@ -3,9 +3,9 @@
 ## Description
 This application is a timed trivia challenge featuring 6 multiple-choice questions. Users will start the game and take the challenge. After answering all question, or the time runs out, the game will end. After the game ends the user is prompted to save their highscore. Users can navigate to, and reset, the highscore page at any point. This application will run in the browser and features dynamically updated HTML and CSS powered by JavaScript. It has a clean, polished, and responsive user interface that adapts to multiple screen sizes.  
 
-[Deployed Application](https://spreston4.github.io/code-quiz/)
+[Deployed Application](https://spreston4.github.io/trivia-challenge/)
 
-[GitHub Repo](https://github.com/spreston4/code-quiz)
+[GitHub Repo](https://github.com/spreston4/trivia-challenge)
 
 ## Technologies used
 Built in Visual Studio with:
